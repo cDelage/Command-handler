@@ -1,7 +1,7 @@
 # README
 ## TMA Application install guide
 
-Docker install : 
+### Docker install : 
 
 
 Step 1 create docker image : 
@@ -31,6 +31,34 @@ Step 5 Create user and database :
 	CREATE DATABASE IF NOT EXISTS `tma` ;
 	GRANT ALL PRIVILEGES ON `tma` . * TO 'tma'@'%';
 	
-Tomcat install : 
+### Tomcat install : 
 
 To be completed
+
+### Application deployment:
+
+Step 1 Start mysql-tma container :
+
+	$ docker start mysql-tma
+
+Step 2 Build maven project :
+
+Build the maven project to generate the .war file.
+
+Step 3 Tomcat WAR deploy :
+
+Go to this URL: http://localhost:8080/manager/
+
+In the section "Deploy", then set : 
+- *Context path* = **/tma**
+- *URL to WAR or directory* = (full path to the .war file in the target directory of the project)
+
+Click on deploy
+
+You can test the application with this URL for example :
+
+http://localhost:8080/tma/rest/MonitorWebService
+
+The application is now ready to use !
+
+
