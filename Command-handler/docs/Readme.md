@@ -1,7 +1,7 @@
 # README
 ## TMA Application install guide
 
-Docker install : 
+### Docker install : 
 
 
 Step 1 create docker image : 
@@ -30,7 +30,7 @@ Step 5 Create user and database :
 	GRANT USAGE ON * . * TO 'tma'@'localhost' IDENTIFIED BY 'tma';
 	CREATE DATABASE IF NOT EXISTS `tma` ;
 	GRANT ALL PRIVILEGES ON `tma` . * TO 'tma'@'%';
-	
+
 Step 6 Open workbench and create database link
 
 Step 7 execute following sql
@@ -90,5 +90,4 @@ Step 6 Call url to update database
 Control step Call url to see database versioning
 
 	localhost:8080/[Context-path]/rest/monitorWebService/getDatabaseVersion
-	
 	
